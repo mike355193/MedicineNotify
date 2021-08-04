@@ -47,33 +47,27 @@ struct CustomMedicinesView: View {
             //let medicines: [MedicineInCustom] = JsonParserInRoot("MedicineInCustom.json")
             
             // fake data
-            let medicines = [CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "bbbb", number: 2),
-                             CustomMedicineItem(name: "aaa", number: 1),
-                             CustomMedicineItem(name: "zzz", number: 3)]
-            
-            
-            List(0..<medicines.count)
-            {
-                index in
-                NavigationLink(
-                    destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/)
-                    {
-                        CustomMedicineItemRow(medicine: medicines[index])
-                    }
-                    .navigationBarBackButtonHidden(true)
-            }
- 
+            let medicines = [CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "pills", name: "bbb", info: "bbb's info", timing: "beforeSleep"),
+                                         CustomMedicineItem(imgUrl: "pills.fill", name: "aaa", info: "aaa's info", timing: "beforeEat"),
+                                         CustomMedicineItem(imgUrl: "cross.case", name: "zzzzzzzz", info: "zzzzzzz's info", timing: "AfterEat")]
+                        
+               
+                        List(0..<medicines.count)
+                        {
+                            index in
+                            CustomMedicineItemRow(medicine: medicines[index])
+                        }
             
             /*
             NavigationView
@@ -103,8 +97,12 @@ struct CustomMedicineItemRow: View {
     
     var body: some View {
         HStack {
-            Text(medicine.name)
-            Text(String(medicine.number))
+            Image(systemName: medicine.imgUrl)
+                        Text(medicine.name)
+                        Text(medicine.info)
+                        Spacer()
+                        Text(medicine.timing)
+            
         }
     }
 }
