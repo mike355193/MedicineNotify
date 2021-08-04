@@ -11,6 +11,9 @@
 		CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7368226BA650A00BB9550 /* ContentView.swift */; };
 		CEA7368526BA650C00BB9550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7368426BA650C00BB9550 /* Assets.xcassets */; };
 		CEA7368826BA650C00BB9550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7368726BA650C00BB9550 /* Preview Assets.xcassets */; };
+		CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7369926BA673F00BB9550 /* JsonParser.swift */; };
+		CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7369D26BA674800BB9550 /* JsonDefines.swift */; };
+		CEA736A226BA689D00BB9550 /* CustomMedicinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		CEA7368426BA650C00BB9550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA7368726BA650C00BB9550 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEA7368926BA650C00BB9550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA7369926BA673F00BB9550 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		CEA7369D26BA674800BB9550 /* JsonDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDefines.swift; sourceTree = "<group>"; };
+		CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedicinesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +58,14 @@
 		CEA7367F26BA650A00BB9550 /* MedicinesNotify */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7369826BA673F00BB9550 /* ShareTools */,
+				CEA7369C26BA674800BB9550 /* Defines */,
 				CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */,
 				CEA7368226BA650A00BB9550 /* ContentView.swift */,
 				CEA7368426BA650C00BB9550 /* Assets.xcassets */,
 				CEA7368926BA650C00BB9550 /* Info.plist */,
 				CEA7368626BA650C00BB9550 /* Preview Content */,
+				CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */,
 			);
 			path = MedicinesNotify;
 			sourceTree = "<group>";
@@ -68,6 +77,23 @@
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
+		};
+		CEA7369826BA673F00BB9550 /* ShareTools */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7369926BA673F00BB9550 /* JsonParser.swift */,
+			);
+			path = ShareTools;
+			sourceTree = "<group>";
+		};
+		CEA7369C26BA674800BB9550 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7369D26BA674800BB9550 /* JsonDefines.swift */,
+			);
+			name = Defines;
+			path = MedicinesNotify/Defines;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -138,8 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */,
+				CEA736A226BA689D00BB9550 /* CustomMedicinesView.swift in Sources */,
 				CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */,
 				CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */,
+				CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
