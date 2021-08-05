@@ -1,0 +1,22 @@
+{
+  "defaults": [
+    {
+      "imgUrl": "pills.fill",
+      "name": "default1"
+    },
+    {
+      "imgUrl": "pills",
+      "name": "default2"
+    }
+  ],
+  "custom": [
+    {
+      "imgUrl": "pills.fill",
+      "name": "custom1"
+    },
+    {
+      "imgUrl": "pills",
+      "name": "custom2"
+    }
+  ]
+}
