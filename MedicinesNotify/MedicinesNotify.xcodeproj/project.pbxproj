@@ -13,7 +13,12 @@
 		CEA7368826BA650C00BB9550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7368726BA650C00BB9550 /* Preview Assets.xcassets */; };
 		CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7369926BA673F00BB9550 /* JsonParser.swift */; };
 		CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7369D26BA674800BB9550 /* JsonDefines.swift */; };
-		CEA736A226BA689D00BB9550 /* CustomMedicinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */; };
+		CEA736C826BB829800BB9550 /* EditMyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736C726BB829800BB9550 /* EditMyListView.swift */; };
+		CEA736CB26BB82B200BB9550 /* MyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736CA26BB82B200BB9550 /* MyListView.swift */; };
+		CEA736CF26BB83E900BB9550 /* EnumDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736CE26BB83E900BB9550 /* EnumDefines.swift */; };
+		CEA736D326BB87CF00BB9550 /* TimePeriodSetting.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */; };
+		CEA736DD26BB8B5800BB9550 /* MedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DC26BB8B5800BB9550 /* MedicineItems.json */; };
+		CEA736E026BB8E2400BB9550 /* CustomMedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +30,12 @@
 		CEA7368926BA650C00BB9550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA7369926BA673F00BB9550 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		CEA7369D26BA674800BB9550 /* JsonDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDefines.swift; sourceTree = "<group>"; };
-		CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMedicinesView.swift; sourceTree = "<group>"; };
+		CEA736C726BB829800BB9550 /* EditMyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyListView.swift; sourceTree = "<group>"; };
+		CEA736CA26BB82B200BB9550 /* MyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListView.swift; sourceTree = "<group>"; };
+		CEA736CE26BB83E900BB9550 /* EnumDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDefines.swift; sourceTree = "<group>"; };
+		CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimePeriodSetting.json; sourceTree = "<group>"; };
+		CEA736DC26BB8B5800BB9550 /* MedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MedicineItems.json; sourceTree = "<group>"; };
+		CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CustomMedicineItems.json; path = MedicinesNotify/JsonFiles/CustomMedicineItems.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		CEA7367F26BA650A00BB9550 /* MedicinesNotify */ = {
 			isa = PBXGroup;
 			children = (
+				CEA736D126BB876D00BB9550 /* JsonFiles */,
+				CEA736C126BB81D700BB9550 /* MyMedicineList */,
 				CEA7369826BA673F00BB9550 /* ShareTools */,
 				CEA7369C26BA674800BB9550 /* Defines */,
 				CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */,
@@ -65,7 +77,6 @@
 				CEA7368426BA650C00BB9550 /* Assets.xcassets */,
 				CEA7368926BA650C00BB9550 /* Info.plist */,
 				CEA7368626BA650C00BB9550 /* Preview Content */,
-				CEA736A126BA689D00BB9550 /* CustomMedicinesView.swift */,
 			);
 			path = MedicinesNotify;
 			sourceTree = "<group>";
@@ -90,10 +101,30 @@
 			isa = PBXGroup;
 			children = (
 				CEA7369D26BA674800BB9550 /* JsonDefines.swift */,
+				CEA736CE26BB83E900BB9550 /* EnumDefines.swift */,
 			);
 			name = Defines;
 			path = MedicinesNotify/Defines;
 			sourceTree = SOURCE_ROOT;
+		};
+		CEA736C126BB81D700BB9550 /* MyMedicineList */ = {
+			isa = PBXGroup;
+			children = (
+				CEA736C726BB829800BB9550 /* EditMyListView.swift */,
+				CEA736CA26BB82B200BB9550 /* MyListView.swift */,
+			);
+			path = MyMedicineList;
+			sourceTree = "<group>";
+		};
+		CEA736D126BB876D00BB9550 /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */,
+				CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */,
+				CEA736DC26BB8B5800BB9550 /* MedicineItems.json */,
+			);
+			path = JsonFiles;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -154,6 +185,9 @@
 			files = (
 				CEA7368826BA650C00BB9550 /* Preview Assets.xcassets in Resources */,
 				CEA7368526BA650C00BB9550 /* Assets.xcassets in Resources */,
+				CEA736DD26BB8B5800BB9550 /* MedicineItems.json in Resources */,
+				CEA736D326BB87CF00BB9550 /* TimePeriodSetting.json in Resources */,
+				CEA736E026BB8E2400BB9550 /* CustomMedicineItems.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */,
-				CEA736A226BA689D00BB9550 /* CustomMedicinesView.swift in Sources */,
+				CEA736CF26BB83E900BB9550 /* EnumDefines.swift in Sources */,
+				CEA736CB26BB82B200BB9550 /* MyListView.swift in Sources */,
 				CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */,
 				CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */,
+				CEA736C826BB829800BB9550 /* EditMyListView.swift in Sources */,
 				CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

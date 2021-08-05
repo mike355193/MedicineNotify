@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+// 時機
+enum Timing: Int {
+    case
+        beforeEat,
+        afterEat,
+        beforeSleep
+}
+
+// 時段
+enum TimePeriod: Int {
+    case
+        moring,
+        noon,
+        evening
+}

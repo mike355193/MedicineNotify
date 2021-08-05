@@ -7,23 +7,7 @@
 
 import Foundation
 
-// 時機
-enum Timing: Int {
-    case
-        beforeEat,
-        afterEat,
-        beforeSleep
-}
-
-// 時段
-enum TimePeriod: Int {
-    case
-        moring,
-        noon,
-        evening
-}
-
-// here the json struct about 我的清單
+// 我的全部藥物清單
 struct CustomMedicineItem : Decodable {
     var imgUrl: String
     var name: String
@@ -32,7 +16,7 @@ struct CustomMedicineItem : Decodable {
     var timing: String  //飯前飯後睡前
 }
 
-// here the json struct about 首頁，
+// 首頁，準備要提醒的藥物清單
 struct NotifyMedicineItem : Decodable {
     var imgUrl: String
     var name: String
@@ -41,13 +25,23 @@ struct NotifyMedicineItem : Decodable {
     var timePeriod: String  //早上中午晚上
 }
 
+// 一個藥品
 struct MedicineItem : Decodable {
     var imgUrl: String
     var name: String
 }
 
-
+// 藥品集合，有分系統預設以及使用者設定 顯示在 "EditMyListView"
 struct MedicineItems : Decodable {
     var defaults: [MedicineItem]
     var custom: [MedicineItem]
+}
+
+
+// 時間區間設定集，用來做系統判斷什麼時候吃藥以及 顯示在 "EditMyListView"
+struct TimePeriodSetting : Decodable {
+    var morining: String
+    var noon: String
+    var evening: String
+    var beforeSleep: String
 }
