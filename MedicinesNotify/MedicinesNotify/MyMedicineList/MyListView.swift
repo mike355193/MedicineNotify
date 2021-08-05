@@ -43,50 +43,50 @@ struct MyListView: View {
             .padding()
             
             // all medicines list
-            // load file MedicineInCustom.json
-            let medicines: [CustomMedicineItem] = JsonParserInRoot("CustomMedicineItems.json")
-            
-            List(0..<medicines.count)
-            {
-                index in
-                CustomMedicineItemRow(medicine: medicines[index])
-            }
-            
-            /*
-            NavigationView
-            {
-                List
-                {
-                    ForEach(0..<medicines.count)
-                    {
-                        index in
-                        NavigationLink(
-                            destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/)
-                            {
-                                 CustomMedicineItemRow(medicine: medicines[index])
-                            }
-                            .navigationBarBackButtonHidden(true)
-                    }
-                }
-            }
- */
-            
+            CustomMedicineItemView()
         }
     }
 }
 
-struct CustomMedicineItemRow: View {
-    var medicine: CustomMedicineItem
+private struct CustomMedicineItemRow: View {
+    let medicineItem: MedicineItem
     
     var body: some View {
-        HStack {
-            Image(systemName: medicine.imgUrl)
-                        Text(medicine.name)
-                        Text(medicine.info)
-                        Spacer()
-                        Text(medicine.timing)
-            
+        if(medicineItem.isSelected == true)
+        {
+            HStack {
+                Image(systemName: medicineItem.imgUrl)
+                            Text(medicineItem.name)
+                            Text(medicineItem.info)
+                            Spacer()
+                            Text(medicineItem.timing)
+                
+            }
         }
+    }
+}
+
+private struct CustomMedicineItemView: View {
+    // load file MedicineItems.json to get all items
+    let medicineItems: MedicineItems = JsonParserInRoot("MedicineItems.json")
+    
+    var body: some View {
+        List()
+        {
+            // defaults
+            ForEach(0..<medicineItems.defaults.count)
+            {
+                index in
+                CustomMedicineItemRow(medicineItem: medicineItems.defaults[index])
+            }
+            // customs
+            ForEach(0..<medicineItems.custom.count)
+            {
+                index in
+                CustomMedicineItemRow(medicineItem: medicineItems.custom[index])
+            }
+        }
+
     }
 }
 

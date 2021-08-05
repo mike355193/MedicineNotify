@@ -2,21 +2,65 @@
   "defaults": [
     {
       "imgUrl": "pills.fill",
-      "name": "default1"
+      "name": "類固醇",
+      "info": "減緩免疫發炎反應、維持血壓及心臟功能，調節醣類、蛋白質、脂肪代謝",
+      "timing": "飯前",
+      "timePeriod": {
+        "morning": true,
+        "noon": true,
+        "evening": true
+      },
+      "isSelected": true
     },
     {
       "imgUrl": "pills",
-      "name": "default2"
+      "name": "抗組織胺",
+      "info": "減緩過敏反應",
+      "timing": "飯前",
+      "timePeriod": {
+        "morning": true,
+        "noon": false,
+        "evening": true
+      },
+      "isSelected": true
+    },
+    {
+      "imgUrl": "cross.case",
+      "name": "感冒藥",
+      "info": "治療感冒",
+      "timing": "飯後",
+      "timePeriod": {
+        "morning": true,
+        "noon": false,
+        "evening": true
+      },
+      "isSelected": true
     }
   ],
   "custom": [
     {
       "imgUrl": "pills.fill",
-      "name": "custom1"
+      "name": "custom1",
+      "info": "custom1's info",
+      "timing": "飯前",
+      "timePeriod": {
+        "morning": true,
+        "noon": true,
+        "evening": true
+      },
+      "isSelected": true
     },
     {
       "imgUrl": "pills",
-      "name": "custom2"
+      "name": "custom2",
+      "info": "custom2's info",
+      "timing": "睡前",
+      "timePeriod": {
+        "morning": false,
+        "noon": false,
+        "evening": true
+      },
+      "isSelected": false
     }
   ]
 }

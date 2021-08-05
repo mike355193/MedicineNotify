@@ -86,7 +86,6 @@ struct MedicineItemsView: View {
 }
 
 struct MedicineItemView: View {
-    // load file MedicineItems.json to get all items
     let medicineItem: MedicineItem
     
     var body: some View {
@@ -95,17 +94,23 @@ struct MedicineItemView: View {
             Button(action:
                     {
                         // according state to do that to do
-                        // state = not selected
-                        
                         // state = selected
+                        
+                        // state = not selected
                     },
                    label:
                     {
                         // according state to do that to show
-                        // state = not selected
-                        Image(systemName: "plus.circle.fill")
                         // state = selected
-                        Image(systemName: "minus.circle.fill")
+                        if(medicineItem.isSelected == true)
+                        {
+                            Image(systemName: "minus.circle.fill")
+                        }
+                        // state = not selected
+                        else
+                        {
+                            Image(systemName: "plus.circle.fill")
+                        }
                     })
             
             Text(medicineItem.name)

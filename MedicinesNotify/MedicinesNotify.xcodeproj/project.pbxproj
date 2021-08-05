@@ -19,6 +19,7 @@
 		CEA736D326BB87CF00BB9550 /* TimePeriodSetting.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */; };
 		CEA736DD26BB8B5800BB9550 /* MedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DC26BB8B5800BB9550 /* MedicineItems.json */; };
 		CEA736E026BB8E2400BB9550 /* CustomMedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */; };
+		CEA736E826BBB98700BB9550 /* AddMedicineFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736E726BBB98700BB9550 /* AddMedicineFrameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TimePeriodSetting.json; sourceTree = "<group>"; };
 		CEA736DC26BB8B5800BB9550 /* MedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MedicineItems.json; sourceTree = "<group>"; };
 		CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CustomMedicineItems.json; path = MedicinesNotify/JsonFiles/CustomMedicineItems.json; sourceTree = SOURCE_ROOT; };
+		CEA736E726BBB98700BB9550 /* AddMedicineFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineFrameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				CEA736C726BB829800BB9550 /* EditMyListView.swift */,
 				CEA736CA26BB82B200BB9550 /* MyListView.swift */,
+				CEA736E726BBB98700BB9550 /* AddMedicineFrameView.swift */,
 			);
 			path = MyMedicineList;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */,
 				CEA736CF26BB83E900BB9550 /* EnumDefines.swift in Sources */,
+				CEA736E826BBB98700BB9550 /* AddMedicineFrameView.swift in Sources */,
 				CEA736CB26BB82B200BB9550 /* MyListView.swift in Sources */,
 				CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */,
 				CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */,
