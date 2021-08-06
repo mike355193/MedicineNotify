@@ -10,7 +10,7 @@
         "noon": true,
         "evening": true
       },
-      "isSelected": true
+      "isSelected": false
     },
     {
       "imgUrl": "pills",
