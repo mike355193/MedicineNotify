@@ -11,7 +11,8 @@ import SwiftUI
 struct MedicinesNotifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            EditMyListView()
         }
     }
 }
