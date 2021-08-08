@@ -58,9 +58,13 @@ struct MedicineItems : Decodable {
 ////////////////////////////////////////////////////////////////////////////////////////
 // 時間區間設定集，用來做系統判斷什麼時候吃藥以及 顯示在 "EditMyListView"
 struct TimePeriodSetting : Decodable {
-    var morining: String
-    var noon: String
-    var evening: String
-    var beforeSleep: String
+    var moriningHour: Int
+    var moriningMinute: Int
+    var noonHour: Int
+    var noonMinute: Int
+    var eveningHour: Int
+    var eveningMinute: Int
+    var beforeSleepHour: Int
+    var beforeSleepMinute: Int
 }
 ////////////////////////////////////////////////////////////////////////////////////////

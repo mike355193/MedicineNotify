@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct EditMyListView: View {
     
     var body: some View {
@@ -38,13 +39,13 @@ struct EditMyListView: View {
                 {
                     HStack
                     {
-                        Text("早上 \(timePeriodSetting.morining)")
-                        Text("中午 \(timePeriodSetting.noon)")
+                        Text("早上 \(FormatTimePeriodToString(hour:timePeriodSetting.moriningHour, minute:timePeriodSetting.moriningMinute))")
+                        Text("中午 \(FormatTimePeriodToString(hour:timePeriodSetting.noonHour, minute:timePeriodSetting.noonMinute))")
                     }
                     HStack
                     {
-                        Text("晚上 \(timePeriodSetting.evening)")
-                        Text("睡前 \(timePeriodSetting.beforeSleep)")
+                        Text("晚上 \(FormatTimePeriodToString(hour:timePeriodSetting.eveningHour, minute:timePeriodSetting.eveningMinute))")
+                        Text("睡前 \(FormatTimePeriodToString(hour:timePeriodSetting.beforeSleepHour, minute:timePeriodSetting.beforeSleepMinute))")
                     }
                 }
                 
@@ -54,17 +55,14 @@ struct EditMyListView: View {
             // list all medecineItems in defaults and customs
             MedicineItemsView()
             
-            
         }
     }
 }
 
 struct MedicineItemsView: View {
-    @State var listItems = ["Item 1", "Item 2", "Item 3"]
+    // load file MedicineItems.json to get all items
     @State var medicineItems: MedicineItems = JsonParserInRoot("MedicineItems.json")
     var body: some View {
-        // load file MedicineItems.json to get all items
-        //var medicineItems: MedicineItems = JsonParserInRoot("MedicineItems.json")
         VStack
         {
             NavigationView
@@ -85,7 +83,7 @@ struct MedicineItemsView: View {
                         index in
                         if (index < medicineItems.custom.count)
                         {
-                            MedicineItemView(medicineItem: self.medicineItems.custom[index])
+                            MedicineItemView(medicineItem: medicineItems.custom[index])
                         }
                     }
                     .onDelete

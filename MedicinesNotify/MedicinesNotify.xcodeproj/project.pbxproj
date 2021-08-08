@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7014F126BFC830009ABDC1 /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7014F026BFC830009ABDC1 /* IndexView.swift */; };
+		CE7014F526BFDA10009ABDC1 /* timeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7014F426BFDA10009ABDC1 /* timeTools.swift */; };
 		CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */; };
 		CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7368226BA650A00BB9550 /* ContentView.swift */; };
 		CEA7368526BA650C00BB9550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7368426BA650C00BB9550 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE7014F026BFC830009ABDC1 /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
+		CE7014F426BFDA10009ABDC1 /* timeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTools.swift; sourceTree = "<group>"; };
 		CEA7367D26BA650A00BB9550 /* MedicinesNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinesNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesNotifyApp.swift; sourceTree = "<group>"; };
 		CEA7368226BA650A00BB9550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7014EF26BFBE0B009ABDC1 /* IndexPage */ = {
+			isa = PBXGroup;
+			children = (
+				CE7014F026BFC830009ABDC1 /* IndexView.swift */,
+			);
+			path = IndexPage;
+			sourceTree = "<group>";
+		};
 		CEA7367426BA650A00BB9550 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +82,7 @@
 		CEA7367F26BA650A00BB9550 /* MedicinesNotify */ = {
 			isa = PBXGroup;
 			children = (
+				CE7014EF26BFBE0B009ABDC1 /* IndexPage */,
 				CEA736D126BB876D00BB9550 /* JsonFiles */,
 				CEA736C126BB81D700BB9550 /* MyMedicineList */,
 				CEA7369826BA673F00BB9550 /* ShareTools */,
@@ -95,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA7369926BA673F00BB9550 /* JsonParser.swift */,
+				CE7014F426BFDA10009ABDC1 /* timeTools.swift */,
 			);
 			path = ShareTools;
 			sourceTree = "<group>";
@@ -203,8 +217,10 @@
 			files = (
 				CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */,
 				CEA736CF26BB83E900BB9550 /* EnumDefines.swift in Sources */,
+				CE7014F526BFDA10009ABDC1 /* timeTools.swift in Sources */,
 				CEA736E826BBB98700BB9550 /* AddMedicineFrameView.swift in Sources */,
 				CEA736CB26BB82B200BB9550 /* MyListView.swift in Sources */,
+				CE7014F126BFC830009ABDC1 /* IndexView.swift in Sources */,
 				CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */,
 				CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */,
 				CEA736C826BB829800BB9550 /* EditMyListView.swift in Sources */,
