@@ -9,7 +9,7 @@ import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // 我的全部藥物清單
-struct CustomMedicineItem : Decodable {
+struct CustomMedicineItem : Codable {
     var imgUrl: String
     var name: String
     var info: String
@@ -20,7 +20,7 @@ struct CustomMedicineItem : Decodable {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // 首頁，準備要提醒的藥物清單
-struct NotifyMedicineItem : Decodable {
+struct NotifyMedicineItem : Codable {
     var imgUrl: String
     var name: String
     var info: String
@@ -31,14 +31,14 @@ struct NotifyMedicineItem : Decodable {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // 一個藥品的時機時段設定
-struct MedicineItemTimePeriod :Decodable {
+struct MedicineItemTimePeriod :Codable {
     var morning: Bool
     var noon: Bool
     var evening: Bool
 }
 
 // 一個藥品
-struct MedicineItem : Decodable {
+struct MedicineItem : Codable {
     var imgUrl: String
     var name: String
     var info: String
@@ -49,7 +49,7 @@ struct MedicineItem : Decodable {
 }
 
 // 藥品集合，有分系統預設以及使用者設定 顯示在 "EditMyListView"
-struct MedicineItems : Decodable {
+struct MedicineItems : Codable {
     var defaults: [MedicineItem]
     var custom: [MedicineItem]
 }
@@ -57,7 +57,7 @@ struct MedicineItems : Decodable {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // 時間區間設定集，用來做系統判斷什麼時候吃藥以及 顯示在 "EditMyListView"
-struct TimePeriodSetting : Decodable {
+struct TimePeriodSetting : Codable {
     var moriningHour: Int
     var moriningMinute: Int
     var noonHour: Int

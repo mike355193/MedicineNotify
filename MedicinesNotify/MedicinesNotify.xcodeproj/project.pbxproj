@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE7014F126BFC830009ABDC1 /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7014F026BFC830009ABDC1 /* IndexView.swift */; };
 		CE7014F526BFDA10009ABDC1 /* timeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7014F426BFDA10009ABDC1 /* timeTools.swift */; };
+		CE7014F926C0D868009ABDC1 /* JsonWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7014F826C0D868009ABDC1 /* JsonWriter.swift */; };
+		CE7014FC26C0F775009ABDC1 /* debug.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7014FB26C0F775009ABDC1 /* debug.json */; };
 		CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */; };
 		CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7368226BA650A00BB9550 /* ContentView.swift */; };
 		CEA7368526BA650C00BB9550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA7368426BA650C00BB9550 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		CE7014F026BFC830009ABDC1 /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
 		CE7014F426BFDA10009ABDC1 /* timeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTools.swift; sourceTree = "<group>"; };
+		CE7014F826C0D868009ABDC1 /* JsonWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWriter.swift; sourceTree = "<group>"; };
+		CE7014FB26C0F775009ABDC1 /* debug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = debug.json; sourceTree = "<group>"; };
 		CEA7367D26BA650A00BB9550 /* MedicinesNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicinesNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7368026BA650A00BB9550 /* MedicinesNotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesNotifyApp.swift; sourceTree = "<group>"; };
 		CEA7368226BA650A00BB9550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				CEA7369926BA673F00BB9550 /* JsonParser.swift */,
 				CE7014F426BFDA10009ABDC1 /* timeTools.swift */,
+				CE7014F826C0D868009ABDC1 /* JsonWriter.swift */,
 			);
 			path = ShareTools;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				CEA736D226BB87CF00BB9550 /* TimePeriodSetting.json */,
 				CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */,
 				CEA736DC26BB8B5800BB9550 /* MedicineItems.json */,
+				CE7014FB26C0F775009ABDC1 /* debug.json */,
 			);
 			path = JsonFiles;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA7368826BA650C00BB9550 /* Preview Assets.xcassets in Resources */,
+				CE7014FC26C0F775009ABDC1 /* debug.json in Resources */,
 				CEA7368526BA650C00BB9550 /* Assets.xcassets in Resources */,
 				CEA736DD26BB8B5800BB9550 /* MedicineItems.json in Resources */,
 				CEA736D326BB87CF00BB9550 /* TimePeriodSetting.json in Resources */,
@@ -224,6 +231,7 @@
 				CEA7368326BA650A00BB9550 /* ContentView.swift in Sources */,
 				CEA7368126BA650A00BB9550 /* MedicinesNotifyApp.swift in Sources */,
 				CEA736C826BB829800BB9550 /* EditMyListView.swift in Sources */,
+				CE7014F926C0D868009ABDC1 /* JsonWriter.swift in Sources */,
 				CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

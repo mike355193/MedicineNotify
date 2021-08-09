@@ -1,0 +1,10 @@
+{
+    "moriningHour":7000,
+    "moriningMinute":0,
+    "noonHour":12,
+    "noonMinute":0,
+    "eveningHour":19,
+    "eveningMinute":0,
+    "beforeSleepHour":21,
+    "beforeSleepMinute":0,
+}
