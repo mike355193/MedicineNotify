@@ -35,10 +35,74 @@ func FormatTimePeriodToString(hour: Int, minute: Int)->String
     return ret
 }
 
+func FormatDateToString(year: Int, month: Int, day: Int, weekDay: Int)->String
+{
+    var weekDayString = ""
+    
+    switch weekDay {
+    case 2:
+        weekDayString = "一"
+    case 3:
+        weekDayString = "二"
+    case 4:
+        weekDayString = "三"
+    case 5:
+        weekDayString = "四"
+    case 6:
+        weekDayString = "五"
+    case 7:
+        weekDayString = "六"
+    case 1:
+        weekDayString = "日"
+    default:
+        weekDayString = "?"
+    }
+    
+    let ret = "\(year) 年 \(month) 月 \(day) 日 星期\(weekDayString)"
+    
+    return ret
+}
+
+struct NowDate {
+    var year: Int = 0
+    var month: Int = 0
+    var day: Int = 0
+    var weekDay: Int = 0
+}
+
 struct NowTime {
     var hour: Int = 0
     var miniute: Int = 0
     var second: Int = 0
+}
+
+func getNowDate()->NowDate
+{
+    var ret = NowDate()
+    
+    let time = Date()
+    
+    let yearFormatter = DateFormatter()
+    yearFormatter.dateFormat = "yyyy"
+    ret.year = Int(yearFormatter.string(from: time))!
+    
+    let monthFormatter = DateFormatter()
+    monthFormatter.dateFormat = "MM"
+    ret.month = Int(monthFormatter.string(from: time))!
+    
+    let dayFormatter = DateFormatter()
+    dayFormatter.dateFormat = "dd"
+    ret.day = Int(dayFormatter.string(from: time))!
+    
+    /*
+    let weekDayFormatter = DateFormatter()
+    weekDayFormatter.dateFormat = "E"
+    let engWeekDay = weekDayFormatter.string(from: time)
+    */
+    let dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: time)
+    ret.weekDay = dateComponents.weekday!
+    
+    return ret
 }
 
 func getNowTime()->NowTime

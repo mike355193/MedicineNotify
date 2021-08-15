@@ -69,6 +69,7 @@ struct MedicineItemsView: View {
             {
                 List()
                 {
+                    // default
                     ForEach(0..<medicineItems.defaults.count)
                     {
                         index in
@@ -116,7 +117,7 @@ struct Safe<T: RandomAccessCollection & MutableCollection, C: View>: View {
    }
 }
 
-struct MedicineItemView: View {
+private struct MedicineItemView: View {
     let medicineItem: MedicineItem
     
     var body: some View {

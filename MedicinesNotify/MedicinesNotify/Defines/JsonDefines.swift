@@ -56,7 +56,7 @@ struct MedicineItems : Codable {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// 時間區間設定集，用來做系統判斷什麼時候吃藥以及 顯示在 "EditMyListView"
+// 時間區間設定集，用來做系統判斷什麼時候吃藥以及 顯示在 "EditMyListView"
 struct TimePeriodSetting : Codable {
     var moriningHour: Int
     var moriningMinute: Int
@@ -66,5 +66,10 @@ struct TimePeriodSetting : Codable {
     var eveningMinute: Int
     var beforeSleepHour: Int
     var beforeSleepMinute: Int
+    
+    mutating func chnageMorning(h: Int, m: Int) {
+           self.moriningHour = h
+           self.moriningMinute = m
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////////////
