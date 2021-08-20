@@ -41,7 +41,7 @@
     {
       "imgUrl": "pills.fill",
       "name": "custom1",
-      "info": "custom1's info",
+      "info": "custom1's ",
       "timing": "飯前",
       "timePeriod": {
         "morning": true,
@@ -132,7 +132,7 @@
         "noon": false,
         "evening": true
       },
-      "isSelected": false
+      "isSelected": true
     },
     {
       "imgUrl": "pills.fill",
@@ -156,7 +156,7 @@
         "noon": false,
         "evening": true
       },
-      "isSelected": false
+      "isSelected": true
     },
     {
       "imgUrl": "pills.fill",
@@ -180,7 +180,7 @@
         "noon": false,
         "evening": true
       },
-      "isSelected": false
+      "isSelected": true
     },
     {
       "imgUrl": "cross.case",

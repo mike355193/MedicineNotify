@@ -24,6 +24,9 @@
 		CEA736DD26BB8B5800BB9550 /* MedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DC26BB8B5800BB9550 /* MedicineItems.json */; };
 		CEA736E026BB8E2400BB9550 /* CustomMedicineItems.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */; };
 		CEA736E826BBB98700BB9550 /* AddMedicineFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA736E726BBB98700BB9550 /* AddMedicineFrameView.swift */; };
+		CEAE71B126CCE1F600D2FF21 /* colorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE71B026CCE1F600D2FF21 /* colorTools.swift */; };
+		CEAE71B426CDE8E400D2FF21 /* BurgerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE71B326CDE8E300D2FF21 /* BurgerListView.swift */; };
+		CEAE71B726CDE8FD00D2FF21 /* NotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE71B626CDE8FD00D2FF21 /* NotifyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		CEA736DC26BB8B5800BB9550 /* MedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MedicineItems.json; sourceTree = "<group>"; };
 		CEA736DF26BB8E2400BB9550 /* CustomMedicineItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CustomMedicineItems.json; path = MedicinesNotify/JsonFiles/CustomMedicineItems.json; sourceTree = SOURCE_ROOT; };
 		CEA736E726BBB98700BB9550 /* AddMedicineFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineFrameView.swift; sourceTree = "<group>"; };
+		CEAE71B026CCE1F600D2FF21 /* colorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorTools.swift; sourceTree = "<group>"; };
+		CEAE71B326CDE8E300D2FF21 /* BurgerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerListView.swift; sourceTree = "<group>"; };
+		CEAE71B626CDE8FD00D2FF21 /* NotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7014F026BFC830009ABDC1 /* IndexView.swift */,
+				CEAE71B326CDE8E300D2FF21 /* BurgerListView.swift */,
+				CEAE71B626CDE8FD00D2FF21 /* NotifyView.swift */,
 			);
 			path = IndexPage;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 				CEA7369926BA673F00BB9550 /* JsonParser.swift */,
 				CE7014F426BFDA10009ABDC1 /* timeTools.swift */,
 				CE7014F826C0D868009ABDC1 /* JsonWriter.swift */,
+				CEAE71B026CCE1F600D2FF21 /* colorTools.swift */,
 			);
 			path = ShareTools;
 			sourceTree = "<group>";
@@ -225,6 +234,8 @@
 				CEA7369E26BA674800BB9550 /* JsonDefines.swift in Sources */,
 				CEA736CF26BB83E900BB9550 /* EnumDefines.swift in Sources */,
 				CE7014F526BFDA10009ABDC1 /* timeTools.swift in Sources */,
+				CEAE71B126CCE1F600D2FF21 /* colorTools.swift in Sources */,
+				CEAE71B426CDE8E400D2FF21 /* BurgerListView.swift in Sources */,
 				CEA736E826BBB98700BB9550 /* AddMedicineFrameView.swift in Sources */,
 				CEA736CB26BB82B200BB9550 /* MyListView.swift in Sources */,
 				CE7014F126BFC830009ABDC1 /* IndexView.swift in Sources */,
@@ -233,6 +244,7 @@
 				CEA736C826BB829800BB9550 /* EditMyListView.swift in Sources */,
 				CE7014F926C0D868009ABDC1 /* JsonWriter.swift in Sources */,
 				CEA7369A26BA673F00BB9550 /* JsonParser.swift in Sources */,
+				CEAE71B726CDE8FD00D2FF21 /* NotifyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

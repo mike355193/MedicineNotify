@@ -12,7 +12,7 @@ struct MedicinesNotifyApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            EditMyListView()
+            IndexView()
         }
     }
 }

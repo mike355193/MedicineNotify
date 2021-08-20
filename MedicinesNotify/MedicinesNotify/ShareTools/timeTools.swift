@@ -27,7 +27,7 @@ func FormatTimePeriodToString(hour: Int, minute: Int)->String
     }
     else
     {
-        minuteString = "\(hour)"
+        minuteString = "\(minute)"
     }
     
     let ret = "\(hourString):\(minuteString)"
@@ -121,7 +121,7 @@ func getNowTime()->NowTime
     
     let secondFormatter = DateFormatter()
     secondFormatter.dateFormat = "ss"
-    ret.second = Int(minuteFormatter.string(from: time))!
+    ret.second = Int(secondFormatter.string(from: time))!
     
     return ret
 }

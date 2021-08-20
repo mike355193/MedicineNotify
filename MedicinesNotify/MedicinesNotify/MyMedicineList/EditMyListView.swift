@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct EditMyListView: View {
-    
+    @Binding var editIsShown: Bool
     var body: some View {
         VStack
         {
@@ -17,10 +17,11 @@ struct EditMyListView: View {
             HStack
             {
                 // back icon [NavigationLink]
-                NavigationLink(
-                    destination:
-                        /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/,
-                    //func()
+                Button(
+                    action:
+                        {
+                            self.editIsShown = false
+                        },
                     label:
                         {
                             Image(systemName: "arrowshape.turn.up.left.fill")
@@ -48,13 +49,23 @@ struct EditMyListView: View {
                         Text("睡前 \(FormatTimePeriodToString(hour:timePeriodSetting.beforeSleepHour, minute:timePeriodSetting.beforeSleepMinute))")
                     }
                 }
-                
             }
-            .padding()
+            .padding(.horizontal)
+            .overlay(
+                EmptyView()
+                    .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                    .background(LinearGradient(gradient:
+                                                Gradient(
+                                                    colors: [Color(hex: 0x2828FF), .white, Color(hex: 0x2828FF)]),
+                                               startPoint: .topLeading,
+                                               endPoint: .bottomTrailing))
+                    .cornerRadius(50)
+                    .opacity(0.3)
+            )
             
             // list all medecineItems in defaults and customs
             MedicineItemsView()
-            
+
         }
     }
 }
@@ -75,7 +86,7 @@ struct MedicineItemsView: View {
                         index in
                         if (index < medicineItems.defaults.count)
                         {
-                            MedicineItemView(medicineItem: medicineItems.defaults[index])
+                            MedicineItemView(medicineItem: medicineItems.defaults[index], color: Color(hex: 0xAE8F00))
                         }
                     }
                     // customs
@@ -84,7 +95,7 @@ struct MedicineItemsView: View {
                         index in
                         if (index < medicineItems.custom.count)
                         {
-                            MedicineItemView(medicineItem: medicineItems.custom[index])
+                            MedicineItemView(medicineItem: medicineItems.custom[index], color: Color(hex: 0xD9B300))
                         }
                     }
                     .onDelete
@@ -92,10 +103,19 @@ struct MedicineItemsView: View {
                         (indexSet) in
                         self.medicineItems.custom.remove(atOffsets: indexSet)
                     }
+                    
+                    // add custom medicine button
+                    HStack
+                    {
+                        Spacer()
+                        Image(systemName: "plus.circle.fill")
+                        Spacer()
+                    }
                 }
                 .navigationBarTitle("回到我的藥單")
                 .navigationBarHidden(true)
             }
+            
         }
     }
 }
@@ -119,6 +139,7 @@ struct Safe<T: RandomAccessCollection & MutableCollection, C: View>: View {
 
 private struct MedicineItemView: View {
     let medicineItem: MedicineItem
+    let color: Color
     
     var body: some View {
         ZStack
@@ -159,12 +180,25 @@ private struct MedicineItemView: View {
                 }
             }
         }
+        .padding()
+        .overlay(
+            EmptyView()
+                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                //.background(Color.gray)
+                .background(LinearGradient(gradient:
+                                            Gradient(
+                                                colors: [color, .white]),
+                                           startPoint: .topLeading,
+                                           endPoint: .bottomTrailing))
+                .cornerRadius(10)
+                .opacity(0.3)
+        )
         
     }
 }
 
 struct EditMyListView_Previews: PreviewProvider {
     static var previews: some View {
-        EditMyListView()
+        EditMyListView(editIsShown: .constant(true))
     }
 }

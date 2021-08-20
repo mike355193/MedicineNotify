@@ -8,41 +8,99 @@
 import SwiftUI
 
 struct IndexView: View {
+    @State var burgerView: Bool = false
+    @State private var myListIsShown = false
     var body: some View {
-        ScrollView
+        ZStack
         {
-            VStack
+            ScrollView
             {
-                // navBar
-                HStack
+                VStack
                 {
-                    // burger icon button
-                    BurgerButton()
-                    
-                    Spacer()
-                    
-                    // Weather
-                    WheatherView()
-                    Spacer()
-                    
-                    // notify icon button
-                    NotifyButton()
-                }
-                .padding()
-                .background(Color.blue)
-                Spacer()
-                
-                ClockView()
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 200, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    // navBar
+                    HStack
+                    {
+                        /*
+                        // burger icon button
+                        BurgerButton()
+                        */
+                        // my medicines List
+                        
+                        Button(
+                            action:
+                                {
+                                    self.myListIsShown = true
+                                },
+                            label:
+                                {
+                                    Image(systemName: "list.triangle")
+                                })
+                            .fullScreenCover(isPresented: $myListIsShown) {
+                                MyListView(myListIsShown: self.$myListIsShown)
+                            }
+                        
+                        Spacer()
+                        
+                        // Weather
+                        WheatherView()
+                        Spacer()
+                        
+                        // notify icon button
+                        NotifyButton()
+                    }
+                    .foregroundColor(Color(hex: 0x460046)) //todo
                     .padding()
-                    .background(Color.red)
+                    .overlay(
+                        EmptyView()
+                            .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                            .background(LinearGradient(gradient:
+                                                        Gradient(
+                                                            colors: [Color(hex: 0x2828FF), .white, Color(hex: 0x2828FF)]),
+                                                       startPoint: .topLeading,
+                                                       endPoint: .bottomTrailing))
+                            .cornerRadius(50)
+                            .opacity(0.3)
+                    )
+                    
+                    Spacer()
+                    
+                    ClockView()
+                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 200, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding()
+                        .overlay(
+                            EmptyView()
+                                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                                .background(LinearGradient(gradient:
+                                                            Gradient(
+                                                                colors: [.green, .white, .green]),
+                                                           startPoint: .topLeading,
+                                                           endPoint: .bottomTrailing))
+                                .cornerRadius(50)
+                                .opacity(0.3)
+                        )
+                        //.background(Color.red)
+                        //.background(LinearGradient(gradient: Gradient(colors: [.white, .green]), startPoint: .top, endPoint: .bottom))
+                    
+                    Spacer()
+                    NextMedicineListView()
+                        .padding()
+                        .overlay(
+                            EmptyView()
+                                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                                //.background(Color.gray)
+                                .background(LinearGradient(gradient:
+                                                            Gradient(
+                                                                colors: [Color(hex: 0xD9B300), .white, Color(hex: 0xD9B300)]),
+                                                           startPoint: .topLeading,
+                                                           endPoint: .bottomTrailing))
+                                .cornerRadius(50)
+                                .opacity(0.3)
+                        )
+                }
                 
-                Spacer()
-                NextMedicineListView()
-                    .background(Color.yellow)
             }
-            .background(Color.gray)
         }
+        
     }
 }
 
@@ -55,6 +113,11 @@ private struct BurgerButton: View {
 private struct BurgerView: View {
     var body: some View {
         Text("Hello, World!")
+            .background(LinearGradient(gradient:
+                                        Gradient(
+                                            colors: [Color(hex: 0x2828FF), .white, Color(hex: 0x2828FF)]),
+                                       startPoint: .topLeading,
+                                       endPoint: .bottomTrailing))
     }
 }
 
@@ -65,31 +128,61 @@ private struct WheatherView: View {
 }
 
 private struct NotifyButton: View {
+    @State private var notifyIsShown = false
     var body: some View {
-        Image(systemName: "bell.fill")
+        Button(
+            action:
+                {
+                    self.notifyIsShown = true
+                },
+            label:
+                {
+                    Image(systemName: "bell.fill")
+                })
+            .sheet(isPresented: self.$notifyIsShown) {
+                NotifyView(notifyIsShown: self.$notifyIsShown)
+            }
     }
 }
 
+
 private struct ClockView: View {
+    @State var nowTime = getNowTime()
+    @State var nowTimeString: String = ""
+    @State var nowDate = getNowDate()
+    @State var nowDateString: String = ""
+    @State var timePeriodNow: String = ""
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         // fix: timer to update
         VStack
         {
-            let nowTime = getNowTime()
-            let nowTimeString = FormatTimePeriodToString(hour: nowTime.hour, minute: nowTime.miniute)
             Text(nowTimeString)
-                .font(.system(size: 100))
+                .font(.system(size: 96, weight: .heavy, design: .rounded))
                 .padding(.bottom)
+                .onReceive(timer)
+                { _ in
+                    nowTime = getNowTime()
+                    nowTimeString = FormatTimePeriodToString(hour: self.nowTime.hour, minute: self.nowTime.miniute)
+                }
             
-            let nowDate = getNowDate()
-            let nowDateString = FormatDateToString(year: nowDate.year, month: nowDate.month, day: nowDate.day, weekDay: nowDate.weekDay)
             Text(nowDateString)
+                .font(.system(size: 18, weight: .heavy, design: .rounded))
                 .padding(.bottom)
+                .onReceive(timer)
+                { _ in
+                    nowDate = getNowDate()
+                    nowDateString = FormatDateToString(year: self.nowDate.year, month: self.nowDate.month, day: self.nowDate.day, weekDay: self.nowDate.weekDay)
+                }
             
-            let timePeriodNow = GetNowTimePeriod()
             Text("下一個時段： \(timePeriodNow)")
-                .font(.system(size: 28))
+                .font(.system(size: 32, weight: .heavy, design: .rounded))
+                .onReceive(timer)
+                { _ in
+                    timePeriodNow = GetNowTimePeriod()
+                }
         }
+        .foregroundColor(Color(hex: 0x28004D))
     }
 }
 
@@ -146,24 +239,43 @@ private func GetNeededMedicineItmes(timePeriod: String)->[MedicineItem]
 }
 
 private struct NextMedicineListView: View {
+    @State var timePeriodNow: String = ""
+    @State var timePeriodNext: String = ""
+    @State var readyMedicineItems: [MedicineItem] = []
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
-        // judge the timePeriod now
-        let timePeriodNow = GetNowTimePeriod()
-        let readyMedicineItems = GetNeededMedicineItmes(timePeriod: timePeriodNow)
-        //var readyMedicineItems = GetNeededMedicineItmes(timePeriod: "中午")
-        
         VStack
         {
-            ForEach(0..<readyMedicineItems.count)
+            // judge the timePeriod per second
+            Text("")
+                .onReceive(timer)
+                { _ in
+                    timePeriodNext = GetNowTimePeriod()
+                    if (timePeriodNext != timePeriodNow)
+                    {
+                        timePeriodNow = timePeriodNext
+                        // TODO: if medicineItems not checked, put into notify and make some record
+                        
+                    }
+                    readyMedicineItems = GetNeededMedicineItmes(timePeriod: timePeriodNow)
+                    
+                }
+
+            if(readyMedicineItems.count > 0)
             {
-                index in
-                if (index < readyMedicineItems.count)
+                ForEach(0..<readyMedicineItems.count)
                 {
-                    CheckMedicineItemView(medicineItem: readyMedicineItems[index])
-                        .padding(.bottom)
+                    index in
+                    if (index < readyMedicineItems.count)
+                    {
+                        CheckMedicineItemView(medicineItem: readyMedicineItems[index])
+                            .padding(.bottom)
+                    }
                 }
             }
         }
+        .font(.system(size: 28, weight: .heavy, design: .rounded))
+        .foregroundColor(Color(hex: 0x460046))
         
     }
 }
